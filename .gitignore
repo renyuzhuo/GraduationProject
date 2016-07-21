@@ -1,0 +1,14 @@
+#文档
+#Document/
+
+#缓存文件
+temp/
+
+copycodeintothisdir.bat
+
+build/
+libs/
+
+node_modules/
+
+.vscode

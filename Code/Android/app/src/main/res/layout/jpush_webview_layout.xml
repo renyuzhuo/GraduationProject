@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.jpush.android.ui.FullScreenView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/actionbarLayoutId"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rlRichpushTitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="@color/colorPrimary">
+
+        <ImageButton
+            android:id="@+id/imgRichpushBtnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_richpush_actionbar_back" />
+
+        <TextView
+            android:id="@+id/tvRichpushTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10.0dp"
+            android:layout_toRightOf="@id/imgRichpushBtnBack"
+            android:clickable="false"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10.0dp"
+            android:layout_toRightOf="@id/imgRichpushBtnBack"
+            android:clickable="false"
+            android:text="通知消息"
+            android:textSize="20sp" />
+
+        <!--<com.renyuzhuo.chat.layout.MyBrowserImageView-->
+            <!--android:id="@+id/my_web_browser"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:paddingRight="10dp"-->
+            <!--android:onClick="openMySelfBrowser"-->
+            <!--android:src="@drawable/browser" />-->
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/fullWebView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000" />
+
+</cn.jpush.android.ui.FullScreenView>
