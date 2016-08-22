@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.renyuzhuo.chat.fragment.OneFragment">
+
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.baoyz.swipemenulistview.SwipeMenuListView
+            android:id="@+id/xlistview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/input"
+            android:clickable="false"
+            android:divider="#00000000"
+            android:footerDividersEnabled="false"
+            android:listSelector="@color/white" />
+    </com.baoyz.widget.PullRefreshLayout>
+</RelativeLayout>

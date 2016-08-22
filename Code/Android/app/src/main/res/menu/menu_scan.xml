@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/open_light"
+        android:orderInCategory="100"
+        android:title="@string/open_flash_light"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/pick_picture_froma_blum"
+        android:orderInCategory="100"
+        android:title="@string/pick_picture_froma_blum"
+        app:showAsAction="never" />
+</menu>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/chat_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chatback0">
+
+    <RelativeLayout
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/emoji_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="?android:editTextBackground"
+                    android:gravity="center_vertical">
+
+                    <com.rockerhieu.emojicon.EmojiconEditText
+                        android:id="@+id/emoji_titile_input"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="说点什么吧"
+                        android:minHeight="35dp"
+                        android:textColor="?android:editTextColor"
+                        android:textSize="17sp" />
+
+                    <CheckBox
+                        android:id="@+id/emoji_check_menu"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/selector_keyboard"
+                        android:button="@null"
+                        android:checked="false"
+                        android:contentDescription="表情输入法切换"
+                        android:focusable="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/send"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/emoji_title_send"
+                            android:layout_width="50dp"
+                            android:layout_height="34dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/edit_send_green" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="34dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:gravity="center"
+                            android:text="发送"
+                            android:textColor="@color/font_black_2" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/other_media"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/other_media_button"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/selector_other_media"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:textColor="@color/font_black_2" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/emoji_linerlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <fragment
+                    android:id="@+id/emojicons"
+                    class="com.rockerhieu.emojicon.EmojiconsFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/speak_linerlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <include layout="@layout/speak_fragment" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/select_media_linerlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <include layout="@layout/media_select_fragment" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/input">
+
+        <ListView
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:divider="#00000000"
+            android:footerDividersEnabled="false"
+            android:listSelector="@color/clear" />
+    </com.baoyz.widget.PullRefreshLayout>
+</RelativeLayout>

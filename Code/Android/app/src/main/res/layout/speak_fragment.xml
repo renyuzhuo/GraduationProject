@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/commonEnterRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/mPanelLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.skyfishjy.library.RippleBackground
+            android:id="@+id/voiceLayout"
+            android:layout_width="match_parent"
+            android:layout_height="195dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:rb_color="#0082AD"
+            app:rb_duration="1500"
+            app:rb_radius="16dp"
+            app:rb_rippleAmount="3"
+            app:rb_scale="4">
+
+            <com.renyuzhuo.chat.layout.RecordButton
+                android:id="@+id/voiceRecordButton"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/anim_voice_record" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/voiceRecordButton"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/tips_hold_to_talk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/hold_to_talk"
+                    android:textColor="@color/font_black_9"
+                    android:textSize="16sp" />
+                <!--显示录音时间-->
+                <FrameLayout
+                    android:id="@+id/soundWaveLayout"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/recordTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:layout_marginBottom="2sp"
+                        android:gravity="center"
+                        android:textColor="#50aeea"
+                        android:textSize="16sp" />
+
+                </FrameLayout>
+            </FrameLayout>
+        </com.skyfishjy.library.RippleBackground>
+
+    </FrameLayout>
+
+</FrameLayout>
